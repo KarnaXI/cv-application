@@ -75,6 +75,12 @@ class App extends Component {
       experienceEndYearTwo: '',
       experienceCurrentlyWorkTwo: '',
       extraExperience: '',
+      experienceOneSummary: '',
+      experienceOneContribution: '',
+      experienceOneContributionTwo: '',
+      experienceTwoSummary: '',
+      experienceTwoContribution: '',
+      experienceTwoContributionTwo: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -94,7 +100,13 @@ class App extends Component {
         }
         else if (e.target.name === "currentlyAttendTwo"){
           this.setState({currentlyAttendTwo: e.target.checked});
-      }
+        }
+        else if (e.target.name === "experienceCurrentlyWork"){
+          this.setState({experienceCurrentlyWork: e.target.checked});
+        }
+        else if (e.target.name === "experienceCurrentlyWorkTwo"){
+          this.setState({experienceCurrentlyWorkTwo: e.target.checked});
+        }
         else{
           this.setState({[e.target.name]: e.target.value});
         }
@@ -259,6 +271,11 @@ class App extends Component {
                 <input type="checkbox" name="experienceCurrentlyWork" checked={this.state.experienceCurrentlyWork} onChange={this.handleChange} />
               </div>
             </div>
+            <div className='experience-notes'>
+                <input type="text" placeholder="OPTIONAL: Provide 1-2 lines describing the company or organization." name="experienceOneSummary" value={this.state.experienceOneSummary} onChange={this.handleChange} />
+                <input type="text" placeholder="Contribution/accomplishment" name="experienceOneContribution" value={this.state.experienceOneContribution} onChange={this.handleChange} />
+                <input type="text" placeholder="Contribution/accomplishment" name="experienceOneContributionTwo" value={this.state.experienceOneContributionTwo} onChange={this.handleChange} />
+            </div>
           </div>
           
           <button className='add-more-experience-button' onClick={this.addExperience}>Add more experience</button>
@@ -287,6 +304,11 @@ class App extends Component {
                     <input type="checkbox" name="experienceCurrentlyWorkTwo" checked={this.state.experienceCurrentlyWorkTwo} onChange={this.handleChange} />
                   </div>
                 </div>
+                <div className='experience-notes'>
+                <input type="text" placeholder="OPTIONAL: Provide 1-2 lines describing the company or organization." name="experienceTwoSummary" value={this.state.experienceTwoSummary} onChange={this.handleChange} />
+                <input type="text" placeholder="Contribution/accomplishment" name="experienceTwoContribution" value={this.state.experienceTwoContribution} onChange={this.handleChange} />
+                <input type="text" placeholder="Contribution/accomplishment" name="experienceTwoContributionTwo" value={this.state.experienceTwoContributionTwo} onChange={this.handleChange} />
+            </div>
               </div>
               )
             }
