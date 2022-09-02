@@ -161,3 +161,6 @@ input.skill {
 .skills-info-container {
   margin-top: 15px;
 }
+.skills-item {
+  display: flex;
+}

@@ -4,6 +4,7 @@ import PhoneInput from 'react-phone-number-input/input';
 import Personal from './components/Personal';
 import Education from './components/Education';
 import Skills from './components/Skills';
+import Experience from './components/Experience';
 
 class App extends Component {
   constructor(props) {
@@ -53,11 +54,33 @@ class App extends Component {
       skillSixInformation: '',
       skillSeven: '',
       skillSevenInformation: '',
+      employerName: '',
+      employerCity: '',
+      employerState: '',
+      position: '',
+      department: '',
+      experienceStartMonth: '',
+      experienceStartYear: '',
+      experienceEndMonth: '',
+      experienceEndYear: '',
+      experienceCurrentlyWork: '',
+      employerNameTwo: '',
+      employerCityTwo: '',
+      employerStateTwo: '',
+      positionTwo: '',
+      departmentTwo: '',
+      experienceStartMonthTwo: '',
+      experienceStartYearTwo: '',
+      experienceEndMonthTwo: '',
+      experienceEndYearTwo: '',
+      experienceCurrentlyWorkTwo: '',
+      extraExperience: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addEducation = this.addEducation.bind(this);
+    this.addExperience = this.addExperience.bind(this);
   }
 
   
@@ -87,12 +110,20 @@ class App extends Component {
   }
 
   addEducation(){
-    console.log(this.state.extraEducation)
     if (this.state.extraEducation){
       this.setState({extraEducation: false});
     }
     else{
       this.setState({extraEducation: true});
+    }
+  }
+
+  addExperience(){
+    if (this.state.extraExperience){
+      this.setState({extraExperience: false});
+    }
+    else{
+      this.setState({extraExperience: true});
     }
   }
 
@@ -178,34 +209,88 @@ class App extends Component {
           <div className='skills-inputs-container'>
           <h2>Skills</h2>
             <div className='skills-item'>
-              <input type="text" class="skill" placeholder="Skill" name="skillOne" value={this.state.skillOne} onChange={this.handleChange} />
+              <input type="text" className="skill" placeholder="Skill" name="skillOne" value={this.state.skillOne} onChange={this.handleChange} />
               <input type="text" placeholder="Skill information" name="skillOneInformation" value={this.state.skillOneInformation} onChange={this.handleChange} />
             </div>
             <div className='skills-item'>
-              <input type="text" class="skill" placeholder="Skill" name="skillTwo" value={this.state.skillTwo} onChange={this.handleChange} />
+              <input type="text" className="skill" placeholder="Skill" name="skillTwo" value={this.state.skillTwo} onChange={this.handleChange} />
               <input type="text" placeholder="Skill information" name="skillTwoInformation" value={this.state.skillTwoInformation} onChange={this.handleChange} />
             </div>
             <div className='skills-item'>
-              <input type="text" class="skill" placeholder="Skill" name="skillThree" value={this.state.skillThree} onChange={this.handleChange} />
+              <input type="text" className="skill" placeholder="Skill" name="skillThree" value={this.state.skillThree} onChange={this.handleChange} />
               <input type="text" placeholder="Skill information" name="skillThreeInformation" value={this.state.skillThreeInformation} onChange={this.handleChange} />
             </div>
             <div className='skills-item'>
-              <input type="text" class="skill" placeholder="Skill" name="skillFour" value={this.state.skillFour} onChange={this.handleChange} />
+              <input type="text" className="skill" placeholder="Skill" name="skillFour" value={this.state.skillFour} onChange={this.handleChange} />
               <input type="text" placeholder="Skill information" name="skillFourInformation" value={this.state.skillFourInformation} onChange={this.handleChange} />
             </div>
             <div className='skills-item'>
-              <input type="text" class="skill" placeholder="Skill" name="skillFive" value={this.state.skillFive} onChange={this.handleChange} />
+              <input type="text" className="skill" placeholder="Skill" name="skillFive" value={this.state.skillFive} onChange={this.handleChange} />
               <input type="text" placeholder="Skill information" name="skillFiveInformation" value={this.state.skillFiveInformation} onChange={this.handleChange} />
             </div>
             <div className='skills-item'>
-              <input type="text" class="skill" placeholder="Skill" name="skillSix" value={this.state.skillSix} onChange={this.handleChange} />
+              <input type="text" className="skill" placeholder="Skill" name="skillSix" value={this.state.skillSix} onChange={this.handleChange} />
               <input type="text" placeholder="Skill information" name="skillSixInformation" value={this.state.skillSixInformation} onChange={this.handleChange} />
             </div>
             <div className='skills-item'>
-              <input type="text" class="skill" placeholder="Skill" name="skillSeven" value={this.state.skillSeven} onChange={this.handleChange} />
+              <input type="text" className="skill" placeholder="Skill" name="skillSeven" value={this.state.skillSeven} onChange={this.handleChange} />
               <input type="text" placeholder="Skill information" name="skillSevenInformation" value={this.state.skillSevenInformation} onChange={this.handleChange} />
             </div>
           </div>
+
+          <div className='experience-inputs-container'>
+            <h2>Experience</h2>
+            <div className='experience-info-inputs'>
+              <input type="text" placeholder="Employer name ..." name="employerName" value={this.state.employerName} onChange={this.handleChange} />
+              <input type="text" placeholder="Employer City" name="employerCity" value={this.state.employerCity} onChange={this.handleChange} />
+              <input type="text" placeholder="Employer State" name="employerState" value={this.state.employerState} onChange={this.handleChange} />
+            </div>
+            <div className='position-department-inputs'>
+              <input type="text" placeholder="Position ..." name="position" value={this.state.position} onChange={this.handleChange} />
+              <input type="text" placeholder="Department ..." name="department" value={this.state.department} onChange={this.handleChange} />
+            </div>
+            <div className='experience-timeline'>
+              <input type="text" placeholder="Start month" name="experienceStartMonth" value={this.state.experienceStartMonth} onChange={this.handleChange} />
+              <input type="text" placeholder="Start year" name="experienceStartYear" value={this.state.experienceStartYear} onChange={this.handleChange} />
+              <input type="text" placeholder="End month" name="experienceEndMonth" value={this.state.experienceEndMonth} onChange={this.handleChange} />
+              <input type="text" placeholder="End year" name="experienceEndYear" value={this.state.experienceEndYear} onChange={this.handleChange} />
+              <div>
+                <label htmlFor='experienceCurrentlyWork'>I currently work here</label>
+                <input type="checkbox" name="experienceCurrentlyWork" checked={this.state.experienceCurrentlyWork} onChange={this.handleChange} />
+              </div>
+            </div>
+          </div>
+          
+          <button className='add-more-experience-button' onClick={this.addExperience}>Add more experience</button>
+          
+          {(() => {
+            if (this.state.extraExperience === true) {
+              return (
+                <div className='experience-container-two'>
+                  <h2>Experience</h2>
+                  <div className='experience-info-inputs'>
+                    <input type="text" placeholder="Employer name ..." name="employerNameTwo" value={this.state.employerNameTwo} onChange={this.handleChange} />
+                    <input type="text" placeholder="Employer City" name="employerCityTwo" value={this.state.employerCityTwo} onChange={this.handleChange} />
+                    <input type="text" placeholder="Employer State" name="employerStateTwo" value={this.state.employerStateTwo} onChange={this.handleChange} />
+                  </div>
+                  <div className='position-department-inputs'>
+                    <input type="text" placeholder="Position ..." name="positionTwo" value={this.state.positionTwo} onChange={this.handleChange} />
+                    <input type="text" placeholder="Department ..." name="departmentTwo" value={this.state.departmentTwo} onChange={this.handleChange} />
+                  </div>
+                  <div className='experience-timeline'>
+                    <input type="text" placeholder="Start month" name="experienceStartMonthTwo" value={this.state.experienceStartMonthTwo} onChange={this.handleChange} />
+                    <input type="text" placeholder="Start year" name="experienceStartYearTwo" value={this.state.experienceStartYearTwo} onChange={this.handleChange} />
+                    <input type="text" placeholder="End month" name="experienceEndMonthTwo" value={this.state.experienceEndMonthTwo} onChange={this.handleChange} />
+                    <input type="text" placeholder="End year" name="experienceEndYearTwo" value={this.state.experienceEndYearTwo} onChange={this.handleChange} />
+                  <div>
+                    <label htmlFor='experienceCurrentlyWorkTwo'>I currently work here</label>
+                    <input type="checkbox" name="experienceCurrentlyWorkTwo" checked={this.state.experienceCurrentlyWorkTwo} onChange={this.handleChange} />
+                  </div>
+                </div>
+              </div>
+              )
+            }
+          })()}
 
 
 
@@ -220,6 +305,7 @@ class App extends Component {
         <Personal personalInfo={this.state} />
         <Education educationInfo={this.state} />
         <Skills skillsInfo={this.state} />
+        <Experience experienceInfo={this.state} />
 
       </div>
 
