@@ -1,4 +1,5 @@
 import React from "react";
+import { formatPhoneNumberIntl } from 'react-phone-number-input';
 
 const Personal = (props) => {
     const { personalInfo } = props;
@@ -9,7 +10,7 @@ const Personal = (props) => {
                 <h1>{personalInfo.name}</h1>
                 <div className="identity-contact">
                     {personalInfo.streetAddress} {personalInfo.city}{ personalInfo.stateProvince ? "," : null } {personalInfo.stateProvince} {personalInfo.zipPostalCode} {personalInfo.country}
-                    { personalInfo.phone ? " |" : null } {personalInfo.phone} { personalInfo.email ? "|" : null } {personalInfo.email}
+                    { personalInfo.phone ? " |" : null } {formatPhoneNumberIntl(personalInfo.phone)} { personalInfo.email ? "|" : null } {personalInfo.email}
                 </div>
                 <div className="objective">
                     <h3 className="objective-heading">Objective</h3>
