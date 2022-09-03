@@ -215,3 +215,52 @@ input.skill {
 .experience-summary-contributions {
   margin-top: 5px;
 }
+
+.project-info-inputs {
+  display: flex;
+}
+
+.project-notes {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-one-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.projects-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-summary-contributions {
+  margin-top: 5px;
+}
+
+.activity-one-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.activity-city {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-info-container {
+  margin-top: 15px;
+}
+
+.projects-info-container {
+  margin-top: 15px;
+}
+
+.activity-info-container {
+  margin-top: 15px;
+}

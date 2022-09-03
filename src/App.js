@@ -5,6 +5,8 @@ import Personal from './components/Personal';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Activity from './components/Activities';
 
 class App extends Component {
   constructor(props) {
@@ -81,6 +83,23 @@ class App extends Component {
       experienceTwoSummary: '',
       experienceTwoContribution: '',
       experienceTwoContributionTwo: '',
+      projectName: '',
+      positionDepartment: '',
+      labCourse: '',
+      projectSummary: '',
+      projectContribution: '',
+      projectContributionTwo: '',
+      organizationName: '',
+      organizationCity: '',
+      organizationState: '',
+      activityPositionDepartment: '',
+      activityStartMonth: '',
+      activityStartYear: '',
+      activityEndMonth: '',
+      activityEndYear: '',
+      activityContribution: '',
+      activityContributionTwo: '',
+      activityCurrent: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -106,6 +125,9 @@ class App extends Component {
         }
         else if (e.target.name === "experienceCurrentlyWorkTwo"){
           this.setState({experienceCurrentlyWorkTwo: e.target.checked});
+        }
+        else if (e.target.name === "activityCurrent"){
+          this.setState({activityCurrent: e.target.checked});
         }
         else{
           this.setState({[e.target.name]: e.target.value});
@@ -314,9 +336,47 @@ class App extends Component {
             }
           })()}
 
-
-
-        
+          <div className='project-inputs-container'>
+            <h2>Projects</h2>
+            <div className='project-info-inputs'>
+              <input type="text" placeholder="Project Name" name="projectName" value={this.state.projectName} onChange={this.handleChange} />
+            </div>
+            <div className='position-department-inputs'>
+              <input type="text" placeholder="Project position or department" name="positionDepartment" value={this.state.positionDepartment} onChange={this.handleChange} />
+              <input type="text" placeholder="Lab/Course" name="labCourse" value={this.state.labCourse} onChange={this.handleChange} />
+            </div>
+            <div className='project-notes'>
+                <input type="text" placeholder="OPTIONAL: Provide 1-2 lines describing project goals and if it was done alone or with a team." name="projectSummary" value={this.state.projectSummary} onChange={this.handleChange} />
+                <input type="text" placeholder="Contribution/accomplishment" name="projectContribution" value={this.state.projectContribution} onChange={this.handleChange} />
+                <input type="text" placeholder="Contribution/accomplishment" name="projectContributionTwo" value={this.state.projectContributionTwo} onChange={this.handleChange} />
+            </div>
+          </div>
+          
+          <div className='activity-inputs-container'>
+            <h2>Activities</h2>
+            <div className='activity-info-inputs'>
+              <input type="text" placeholder="Organization name" name="organizationName" value={this.state.organizationName} onChange={this.handleChange} />
+              <input type="text" placeholder="Organization City" name="organizationCity" value={this.state.organizationCity} onChange={this.handleChange} />
+              <input type="text" placeholder="Organization State" name="organizationState" value={this.state.organizationState} onChange={this.handleChange} />
+            </div>
+            <div className='position-department-inputs'>
+              <input type="text" placeholder="Position / Department" name="activityPositionDepartment" value={this.state.activityPositionDepartment} onChange={this.handleChange} />
+            </div>
+            <div className='experience-timeline'>
+              <input type="text" placeholder="Start month" name="activityStartMonth" value={this.state.activityStartMonth} onChange={this.handleChange} />
+              <input type="text" placeholder="Start year" name="activityStartYear" value={this.state.activityStartYear} onChange={this.handleChange} />
+              <input type="text" placeholder="End month" name="activityEndMonth" value={this.state.activityEndMonth} onChange={this.handleChange} />
+              <input type="text" placeholder="End year" name="activityEndYear" value={this.state.activityEndYear} onChange={this.handleChange} />
+              <div>
+                    <label htmlFor='activityCurrent'>I still participate</label>
+                    <input type="checkbox" name="activityCurrent" checked={this.state.activityCurrent} onChange={this.handleChange} />
+                  </div>
+            </div>
+            <div className='experience-notes'>
+                <input type="text" placeholder="Impact of your contribution" name="activityContribution" value={this.state.activityContribution} onChange={this.handleChange} />
+                <input type="text" placeholder="Impact of your contribution" name="activityContributionTwo" value={this.state.activityContributionTwo} onChange={this.handleChange} />
+            </div>
+          </div>
 
           <input type="submit" value="Submit" onSubmit={this.handleSubmit} />
 
@@ -328,6 +388,8 @@ class App extends Component {
         <Education educationInfo={this.state} />
         <Skills skillsInfo={this.state} />
         <Experience experienceInfo={this.state} />
+        <Projects projectsInfo={this.state} />
+        <Activity activityInfo={this.state} />
 
       </div>
 
