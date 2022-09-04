@@ -87,24 +87,28 @@ input {
 .education-container {
   display: flex;
   flex-direction: column;
-  margin-top:20px;
+  margin-top:15px;
 }
 
 
 .school-info-inputs{
   display: flex;
+  flex-flow: wrap;
 }
 
 .degree-certificate-inputs {
   display: flex;
+  flex-flow: wrap;
 }
 
 .address-fields {
   display: flex;
+  flex-flow: wrap;
 }
 
 .contact-fields {
   display: flex;
+  flex-flow:wrap;
 }
 
 .education {
@@ -113,6 +117,7 @@ input {
 
 .education-timeline {
   display: flex;
+  flex-flow: wrap;
 }
 
 .education-school-city {
@@ -141,7 +146,7 @@ p {
 
 button.add-more-education-button {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   width: fit-content;
   align-self: center;
 }
@@ -168,23 +173,38 @@ input.skill {
   flex-grow: 0.1;
 }
 
+@media screen and (max-width:403px) {
+  input.skill {
+    flex-grow: 1;
+  }
+  
+}
+
 .skills-info-container {
   margin-top: 15px;
 }
 .skills-item {
   display: flex;
+  flex-flow: wrap;
+}
+
+.experience-inputs-container{
+  margin-top:15px;
 }
 
 .experience-info-inputs {
   display: flex;
+  flex-flow: wrap;
 }
 
 .position-department-inputs {
   display: flex;
+  flex-flow: wrap;
 }
 
 .experience-timeline {
   display: flex;
+  flex-flow: wrap;
 }
 
 .experience-notes {
@@ -197,6 +217,11 @@ input.skill {
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+}
+
+.objective-container {
+  display: flex;
+  flex-flow:wrap;
 }
 
 .experience-two-container{
@@ -214,6 +239,10 @@ input.skill {
 
 .experience-summary-contributions {
   margin-top: 5px;
+}
+
+.project-inputs-container{
+  margin-top: 15px;
 }
 
 .project-info-inputs {
@@ -241,6 +270,15 @@ input.skill {
   margin-top: 5px;
 }
 
+.activity-inputs-container {
+  margin-top:15px;
+}
+
+.activity-info-inputs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .activity-one-container{
   display: flex;
   flex-direction: row;
@@ -264,3 +302,8 @@ input.skill {
 .activity-info-container {
   margin-top: 15px;
 }
+
+ul.activity-contributions {
+  margin-top: 5px;
+}
+
